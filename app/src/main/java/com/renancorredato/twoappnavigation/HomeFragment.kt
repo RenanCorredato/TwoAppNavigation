@@ -34,14 +34,20 @@ class HomeFragment : Fragment() {
             }
 
 
-            val bundle = bundleOf(
-                "ID" to binding.edtProductId.text.toString().toInt()
-            )
+//            val bundle = bundleOf(
+//                "ID" to binding.edtProductId.text.toString().toInt()
+//            )
 
-            findNavController().navigate(
-                R.id.action_homeFragment_to_productDetails,
-                bundle
-            )
+            val action = HomeFragmentDirections
+                .actionHomeFragmentToProductDetails(
+                    id = binding.edtProductId.text.toString().toInt(),
+                    user = User(
+                        id = 1,
+                        name = "Renan Corredato"
+                    )
+                )
+
+            findNavController().navigate(action)
         }
     }
 }

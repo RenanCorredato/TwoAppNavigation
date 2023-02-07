@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.renancorredato.twoappnavigation.databinding.FragmentProductDetailsBinding
 
 class ProductDetails : Fragment() {
+
+    private val args: ProductDetailsArgs by navArgs()
 
     private lateinit var binding: FragmentProductDetailsBinding
 
@@ -54,13 +57,17 @@ class ProductDetails : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val id = requireArguments().getInt("ID")
+//        val id = requireArguments().getInt("ID")
+        val id = args.id
+//        val user = args.user
+//        user.id  objeto de uma tela para outro
+//        user.name
 
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
 
-        if (id >= product.size){
+        if (id >= product.size) {
             binding.tvName.text = "Produto inválido"
             binding.tvDescription.visibility = View.GONE
             binding.tvPrice.visibility = View.GONE

@@ -18,5 +18,12 @@
         android:id="@+id/productDetails"
         android:name="com.renancorredato.twoappnavigation.ProductDetails"
         android:label="ProductDetails"
-        tools:layout="@layout/fragment_product_details" />
+        tools:layout="@layout/fragment_product_details" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="user"
+            app:argType="com.renancorredato.twoappnavigation.User" />
+    </fragment>
 </navigation>
