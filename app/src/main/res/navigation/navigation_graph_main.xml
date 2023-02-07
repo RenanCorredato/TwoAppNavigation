@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_productDetails"
-            app:destination="@id/productDetails" />
+            app:destination="@id/productDetails"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/productDetails"
@@ -22,8 +26,5 @@
         <argument
             android:name="id"
             app:argType="integer" />
-        <argument
-            android:name="user"
-            app:argType="com.renancorredato.twoappnavigation.User" />
     </fragment>
 </navigation>

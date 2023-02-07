@@ -40,12 +40,7 @@ class HomeFragment : Fragment() {
 
             val action = HomeFragmentDirections
                 .actionHomeFragmentToProductDetails(
-                    id = binding.edtProductId.text.toString().toInt(),
-                    user = User(
-                        id = 1,
-                        name = "Renan Corredato"
-                    )
-                )
+                    id = binding.edtProductId.text.toString().toInt())
 
             findNavController().navigate(action)
         }
